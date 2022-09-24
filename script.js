@@ -1,5 +1,6 @@
 var dateToday = $("#currentDay")
-
+var timeNow = moment().format("h:mm a");
+console.log(timeNow)
 
 
 
@@ -11,6 +12,8 @@ dateToday.text(today);
 
 // Timeblocks for standard business hours are displayed
     // Each hour block: generate a moment object for today's date at the specified time (moment add 1 hour)
+    
+    
 
 
 // Each timeblock is color coded to indicate whether it is in the past, present, or future
