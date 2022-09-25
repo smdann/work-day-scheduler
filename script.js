@@ -1,6 +1,7 @@
+// Variables for today's date and current time
 var dateToday = $("#currentDay")
 var timeNow = moment().hour();
-console.log(timeNow)
+  console.log(timeNow)
 
 // The current day is displayed at the top of the calendar
 var today = moment().format("dddd, MMMM Do");
@@ -76,19 +77,22 @@ $(document).ready(function(){
    
 })
 
-
-
-
-
-// Timeblocks for standard business hours are displayed
-    // Each hour block: generate a moment object for today's date at the specified time 
-    
-
-
 // Each timeblock is color coded to indicate whether it is in the past, present, or future
+$(".col-10").each(function(){
+  var hourBlock = $(this).attr("id");
+  console.log(hourBlock);
+  if(hourBlock < timeNow){
     // past = gray
-    // present hour = red
+    $(this).addClass("past");
     // future = green
+  } else if (hourBlock > timeNow){
+    $(this).addClass("future");
+    // present = red
+  } else {
+    $(this).addClass("present");
+  }
+})
+
 
 
 
